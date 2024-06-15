@@ -157,6 +157,12 @@ form input {
   padding: 0 40px;
 }
 
+@media screen and (max-width: 576px) {
+  .search-btn {
+    padding: 0 10px;
+  }
+}
+
 /******************* forecast section styling *******************/
 
 .forecast-container {
