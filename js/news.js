@@ -1,26 +1,25 @@
-const newsApiKey = "3929badf60f248cea00a5b4fda104664";
-const newsApiUrl = `https://newsapi.org/v2/everything?q=weather&apiKey=${newsApiKey}`;
+const gnewsApiUrl = "https://gnews.io/api/v4/search?q=weather&token=dc40c86b11d1076778d28a95fd7cddfd";
 
 const newsContainer = document.querySelector(".news-container");
 const defaultImg = "../imgs/cloudy.png";
 
-async function fetchNews() {
+async function fetchWeatherNews() {
     try {
-        let response = await fetch(newsApiUrl);
+        let response = await fetch(gnewsApiUrl);
         let newsData = await response.json();
-        displayNews(newsData.articles);
+        displayWeatherNews(newsData.articles);
     } catch (error) {
-        console.error("Error fetching news:", error);
-        newsContainer.innerHTML = `<p>Error fetching news. Please try again later.</p>`;
+        console.error("Error fetching weather news:", error);
+        newsContainer.innerHTML = `<p>Error fetching weather news. Please try again later.</p>`;
     }
 }
 
-function displayNews(articles) {
+function displayWeatherNews(articles) {
     let newsHTML = "";
 
     for (let i = 0; i < articles.length; i++) {
         let article = articles[i];
-        let imageUrl = article.urlToImage || defaultImg;
+        let imageUrl = article.image || defaultImg;
 
         newsHTML += `
             <div class="col-lg-4 col-md-6">
@@ -39,4 +38,4 @@ function displayNews(articles) {
     newsContainer.innerHTML = newsHTML;
 }
 
-window.onload = fetchNews;
+window.onload = fetchWeatherNews;
