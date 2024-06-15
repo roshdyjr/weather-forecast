@@ -2,19 +2,11 @@ const newsApiKey = "3929badf60f248cea00a5b4fda104664";
 const newsApiUrl = `https://newsapi.org/v2/everything?q=weather&apiKey=${newsApiKey}`;
 
 const newsContainer = document.querySelector(".news-container");
+const defaultImg = "../imgs/cloudy.png";
 
 async function fetchNews() {
     try {
-        let response = await fetch(newsApiUrl, {
-            headers: {
-                "Accept": "application/json",
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
+        let response = await fetch(newsApiUrl);
         let newsData = await response.json();
         displayNews(newsData.articles);
     } catch (error) {
@@ -26,8 +18,9 @@ async function fetchNews() {
 function displayNews(articles) {
     let newsHTML = "";
 
-    articles.forEach(article => {
-        let imageUrl = article.urlToImage || '';
+    for (let i = 0; i < articles.length; i++) {
+        let article = articles[i];
+        let imageUrl = article.urlToImage || defaultImg;
 
         newsHTML += `
             <div class="col-lg-4 col-md-6">
@@ -41,7 +34,7 @@ function displayNews(articles) {
                 </div>
             </div>
         `;
-    });
+    }
 
     newsContainer.innerHTML = newsHTML;
 }
