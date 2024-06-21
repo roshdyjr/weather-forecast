@@ -1,8 +1,5 @@
 /****************** global styling ******************/
 
-* {
-  outline: 1px solid red;
-}
 body {
   color: #bfc1c8;
   font-family: "Roboto", "Open Sans", sans-serif;
@@ -250,6 +247,12 @@ form input {
 .social a:hover {
   background: #009ad8;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .offset-1 {
+    margin-left: 0;
+  }
 }
 
 /****************** contact page styling ******************/
