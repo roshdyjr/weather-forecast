@@ -1,5 +1,8 @@
 /****************** global styling ******************/
 
+* {
+  outline: 1px solid red;
+}
 body {
   color: #bfc1c8;
   font-family: "Roboto", "Open Sans", sans-serif;
