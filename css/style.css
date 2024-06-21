@@ -108,7 +108,7 @@ h1 {
 
 .navbar-toggler:focus {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .navbar-toggler:hover .navbar-icon {
@@ -318,11 +318,11 @@ i {
 .modal-container {
   display: none;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   inset: 0;
   background-color: #00000041;
   z-index: 999;
@@ -340,21 +340,28 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .img-modal i {
   color: #1e202b;
 }
 
+@media screen and (max-width: 576px) {
+  .img-modal {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 /****************** news page styling ******************/
 .news-card {
   background-color: #262936;
-  border-radius: 4px; 
+  border-radius: 4px;
   margin-bottom: 20px;
   padding: 15px;
 }
@@ -377,10 +384,9 @@ i {
 }
 
 .news-card a.btn {
-  background: #009AD8;
+  background: #009ad8;
   color: #fff;
   text-transform: uppercase;
   padding: 10px 15px;
   border-radius: 4px;
 }
-
